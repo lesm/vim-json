@@ -99,13 +99,13 @@ syn region  jsonFold matchgroup=jsonBraces start="\[" end=/]\(\_s\+\ze"\)\@!/ tr
 if version >= 508 || !exists("did_json_syn_inits")
   hi def link jsonPadding		Operator
   hi def link jsonString		String
-  hi def link jsonTest			Label
+  hi def link jsonTest			Define
   hi def link jsonEscape		Special
-  hi def link jsonNumber		Delimiter
-  hi def link jsonBraces		Delimiter
+  hi def link jsonNumber		Number
+  hi def link jsonBraces		Normal
   hi def link jsonNull			Function
-  hi def link jsonBoolean		Delimiter
-  hi def link jsonKeyword		Label
+  hi def link jsonBoolean		Boolean
+  hi def link jsonKeyword		Define
 
 	if (!exists("g:vim_json_warnings") || g:vim_json_warnings==1)
 		hi def link jsonNumError					Error
@@ -117,8 +117,8 @@ if version >= 508 || !exists("did_json_syn_inits")
 		hi def link jsonNoQuotesError				Error
 		hi def link jsonTripleQuotesError		Error
   endif
-  hi def link jsonQuote			Quote
-  hi def link jsonNoise			Noise
+  hi def link jsonQuote			QuoteJson
+  hi def link jsonNoise			Keyword
 endif
 
 let b:current_syntax = "json"
